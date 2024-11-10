@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มการสมัครสมาชิกห้องสมุด</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: #330000;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .required {
+            color: red;
+            font-size: 14px;
+        }
+
+        .form-row {
+            margin-bottom: 10px;
+        }
+
+        .form-row:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<h2>แบบฟอร์มการสมัครสมาชิกห้องสมุด</h2>
+
+<form>
+    <div class="form-row">
+        <label for="full_name">ชื่อ – นามสกุล (ภาษาไทย): <span class="required">*</span></label>
+        <input type="text" id="full_name" name="full_name" required>
+    </div>
+
+    <div class="form-row">
+        <label for="full_name_en">ชื่อ – นามสกุล (ภาษาอังกฤษ): <span class="required">*</span></label>
+        <input type="text" id="full_name_en" name="full_name_en" required>
+    </div>
+
+    <div class="form-row">
+        <label for="gender">เพศ: <span class="required">*</span></label>
+        <input type="radio" id="male" name="gender" value="ชาย" required>
+        <label for="male">ชาย</label>
+        <input type="radio" id="female" name="gender" value="หญิง" required>
+        <label for="female">หญิง</label>
+    </div>
+
+    <div class="form-row">
+        <label for="student_id">รหัสนักศึกษา: <span class="required">*</span></label>
+        <input type="text" id="student_id" name="student_id" required pattern="[0-9]{8}" title="กรุณากรอกรหัสนักศึกษาที่มี 8 หลัก">
+    </div>
+
+    <div class="form-row">
+        <label for="faculty">คณะที่ศึกษา: <span class="required">*</span></label>
+        <input type="text" id="faculty" name="faculty" required>
+    </div>
+
+    <div class="form-row">
+        <label for="email">ที่อยู่อีเมล (E-mail address): <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-row">
+        <label for="dob">วันเดือนปีเกิด: <span class="required">*</span></label>
+        <input type="date" id="dob" name="dob" required>
+    </div>
+
+    <div class="form-row">
+        <label for="book_type">ประเภทของหนังสือที่สนใจ: <span class="required">*</span></label>
+        <select id="book_type" name="book_type" required>
+            <option value="นิยาย">นิยาย</option>
+            <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
+            <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
+            <option value="ศิลปะ">ศิลปะ</option>
+            <option value="การศึกษา">การศึกษา</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label for="newsletter">ความต้องการรับข่าวสารข้อมูลของห้องสมุดทางอีเมลหรือไม่: <span class="required">*</span></label>
+        <input type="checkbox" id="newsletter" name="newsletter">
+        <label for="newsletter">ต้องการรับข่าวสาร</label>
+    </div>
+
+    <input type="submit" value="สมัครสมาชิก">
+
+</form>
+
+
+</body>
+</html>
